@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-06-15T23:29:33.534Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="5I62BXOj-IjKX5OMYoZ3" version="21.4.0" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2023-06-15T23:37:01.558Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="Py5rUCNAQ4BMH0ZcXKhV" version="21.4.0" type="github" pages="4">
   <diagram name="Page-1" id="UMGvQnXuwSlmLZYAjQJy">
     <mxGraphModel dx="1194" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -383,8 +383,8 @@
         <mxCell id="7z16JHJX92VVNgglRkpK-24" value="total value of requested resources (both CPU and mem.) in the dmp-test NS was significantly below the quotas" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="850" y="720" width="142" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="7z16JHJX92VVNgglRkpK-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="430" y="920" width="738" height="240" as="geometry" />
+        <mxCell id="7z16JHJX92VVNgglRkpK-26" value="Hypothesis: Resource Quotas for all ns exceeds real amount of resources available in the cluster" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="430" y="890" width="738" height="270" as="geometry" />
         </mxCell>
         <mxCell id="7z16JHJX92VVNgglRkpK-28" value="Total Cluster Resources" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=bottom;" vertex="1" parent="1">
           <mxGeometry x="490" y="950" width="114" height="200" as="geometry" />
@@ -439,6 +439,9 @@
         </mxCell>
         <mxCell id="7z16JHJX92VVNgglRkpK-49" value="&amp;lt;" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="606" y="1050" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7z16JHJX92VVNgglRkpK-50" value="When defining quotas, you can assign an amount of resources&amp;nbsp; that actually exceeds the actual capacities of the cluster.&lt;br&gt;If this is what happened in c01 cluster, this situation can create a &quot;first come first served&quot; effect&amp;nbsp; accross the different namespaces" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="920" width="260" height="160" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
