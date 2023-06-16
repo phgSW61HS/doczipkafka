@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-06-16T01:01:00.691Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="zTLLS7vB3N6LlaOXI6LE" version="21.4.0" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2023-06-16T01:18:16.988Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="KB7Kcpu-GzgAAGkpkKoq" version="21.4.0" type="github" pages="5">
   <diagram name="Page-1" id="UMGvQnXuwSlmLZYAjQJy">
     <mxGraphModel dx="739" dy="470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -73,7 +73,7 @@
         <mxCell id="2bjBSCAmk6lOA1KvFB3E-20" value="&lt;h1&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Initial Workload&lt;/span&gt;&lt;/h1&gt;&lt;h1&gt;&lt;span style=&quot;background-color: initial; font-size: 12px; font-weight: normal;&quot;&gt;Several statefulsets that need to be deployed for each namespace&lt;/span&gt;&lt;br&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="90" y="1208" width="630" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="2bjBSCAmk6lOA1KvFB3E-24" value="web-ui pod 1&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="1" vertex="1">
+        <mxCell id="2bjBSCAmk6lOA1KvFB3E-24" value="web-ui pod 2&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="1" vertex="1">
           <mxGeometry x="519" y="1463" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2bjBSCAmk6lOA1KvFB3E-26" value="Remaining resources for dmp-dev: 6gb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
@@ -93,18 +93,6 @@
       <root>
         <mxCell id="YmpykI_a9cAOImod66VC-0" />
         <mxCell id="YmpykI_a9cAOImod66VC-1" parent="YmpykI_a9cAOImod66VC-0" />
-        <mxCell id="YmpykI_a9cAOImod66VC-2" value="SNF stateful set (gpi-dev)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="25" y="1570" width="310" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-3" value="Web-ui stateful set (tdc-dev)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="349" y="1433" width="310" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-4" value="Oracle-db stateful set (tdc-dev)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="28" y="1433" width="310" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-5" value="Zookeeper stateful set (dmp-dev)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="30" y="1308" width="310" height="120" as="geometry" />
-        </mxCell>
         <mxCell id="YmpykI_a9cAOImod66VC-6" value="&lt;h1&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Nodes dedicated to namespaces - Taints, tolerations and affinity&lt;/span&gt;&lt;/h1&gt;&lt;h1&gt;&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;In order to enforce an alignment between theoretical resources allocation for a namespace, and the actual resources available to its objects, we can consider a solution: DEDICATE set of NODES exclusively to a NAMESPACE&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;Taints are used to repel Pods from specific nodes. This is comparable to a label applied to a node. The difference between TAINT and LABEL lies in the fact that a taint tells the scheduler to repel pods from this specific node if it DOES NOT MATCH the TAINT. &lt;br&gt;Only those PODS that Hhave a TOLERATION for the TAINT can be deployed into that node&lt;span style=&quot;font-size: 12px; font-weight: 400;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;labelBorderColor=#FFFFFF;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
           <mxGeometry x="50" y="19" width="960" height="191" as="geometry" />
         </mxCell>
@@ -126,41 +114,8 @@
         <mxCell id="YmpykI_a9cAOImod66VC-12" value="namespace:gpi-test:NoSchedule" style="text;html=1;strokeColor=#2D7600;fillColor=#60a917;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
           <mxGeometry x="555" y="630" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-16" value="zookeeper pod 1&lt;br&gt;6 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="50" y="1348" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-17" value="zookeeper pod 2&lt;br&gt;6 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="180" y="1348" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-18" value="snf pod 1&lt;br&gt;9 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#0000FF;strokeColor=#B09500;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="45" y="1606" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-19" value="snf pod 2&lt;br&gt;9 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#0000FF;strokeColor=#B09500;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="175" y="1606" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-20" value="oracle-db pod 1&lt;br&gt;14 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="130" y="1468" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-21" value="web-ui pod 1&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="379" y="1463" width="120" height="60" as="geometry" />
-        </mxCell>
         <mxCell id="YmpykI_a9cAOImod66VC-22" value="&lt;h1&gt;Actions on the node&lt;/h1&gt;&lt;p&gt;In order to implement this solution, it will involves actions from Container Squad first, who will need to add&lt;/p&gt;&lt;p&gt;- taints: &amp;lt;key&amp;gt;:&amp;lt;value&amp;gt;:Effect&amp;gt; defined on the node (&lt;/p&gt;Taint effects define how nodes with a taint react to Pods that don’t tolerate it.&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;p&gt;- label: &amp;lt;key&amp;gt;:&amp;lt;value&amp;gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
           <mxGeometry x="50" y="220" width="950" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-24" value="&lt;h1&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Initial Workload&lt;/span&gt;&lt;/h1&gt;&lt;h1&gt;&lt;span style=&quot;background-color: initial; font-size: 12px; font-weight: normal;&quot;&gt;Several statefulsets that need to be deployed for each namespace&lt;/span&gt;&lt;br&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="90" y="1208" width="630" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-25" value="web-ui pod 1&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="519" y="1463" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-26" value="Remaining resources for dmp-dev: 6gb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="680" y="1318" width="120" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-27" value="Remaining resources for tdc-dev: 0gb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="680" y="1448" width="120" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="YmpykI_a9cAOImod66VC-28" value="Remaining resources for gpi-dev: 0gb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
-          <mxGeometry x="690" y="1598" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="i3B5c76FBCLhBAuVrxMg-0" value="Taint" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
           <mxGeometry x="10" y="630" width="60" height="30" as="geometry" />
@@ -185,6 +140,114 @@
         </mxCell>
         <mxCell id="i3B5c76FBCLhBAuVrxMg-7" value="Label" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
           <mxGeometry x="10" y="670" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-29" value="SNF stateful set (gpi-dev)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="1065" y="855" width="310" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-30" value="Web-ui stateful set (tdc-dev)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="676" y="850" width="310" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-31" value="Oracle-db stateful set (tdc-dev)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="355" y="850" width="310" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-32" value="Zookeeper stateful set (dmp-dev)" style="rounded=1;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="20" y="840" width="310" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-33" value="zookeeper pod 1&lt;br&gt;nodeAffinity:&amp;nbsp;&lt;br&gt;namespace:dmp-test&lt;br&gt;toleration:&amp;nbsp;&lt;br&gt;namespace:dmp-test:NoSchedule" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="39" y="870" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-35" value="snf pod 1&lt;br&gt;9 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#0000FF;strokeColor=#B09500;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="1085" y="891" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-36" value="snf pod 2&lt;br&gt;9 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#0000FF;strokeColor=#B09500;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="1215" y="891" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-37" value="oracle-db pod 1&lt;br&gt;14 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="457" y="885" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-38" value="web-ui pod 1&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="706" y="880" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-40" value="web-ui pod 2&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="846" y="880" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-41" value="Remaining resources for dmp-dev: 6gb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="135" y="780" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-42" value="Remaining resources for tdc-dev: 0gb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="465" y="780" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-43" value="Remaining resources for gpi-dev: 0gb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="1116" y="790" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-57" value="&lt;h1&gt;All pods successfully scheduled&lt;/h1&gt;&lt;p&gt;Total resources available on the cluster &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;= 6 gb&lt;/p&gt;&lt;p&gt;Resources yet to be consumed (according to dmp-dev ns quota) &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;= 6 gb&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="1015" y="1060" width="450" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-58" value="zookeeper pod 2&lt;br&gt;nodeAffinity:&amp;nbsp;&lt;br&gt;namespace:dmp-test&lt;br&gt;toleration:&amp;nbsp;&lt;br&gt;namespace:dmp-test:NoSchedule" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="185" y="870" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-59" value="minion 1" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="210" y="990" width="200" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-65" value="zookeeper pod 1&lt;br&gt;nodeAffinity:&amp;nbsp;&lt;br&gt;namespace:dmp-test&lt;br&gt;toleration:&amp;nbsp;&lt;br&gt;namespace:dmp-test:NoSchedule" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" vertex="1" parent="OvRHfM7m8GLuQbLyOeoD-59">
+          <mxGeometry x="30" y="40" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-66" value="zookeeper pod 2&lt;br&gt;nodeAffinity:&amp;nbsp;&lt;br&gt;namespace:dmp-test&lt;br&gt;toleration:&amp;nbsp;&lt;br&gt;namespace:dmp-test:NoSchedule" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" vertex="1" parent="OvRHfM7m8GLuQbLyOeoD-59">
+          <mxGeometry x="30" y="150" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-60" value="namespace:dmp-test:NoSchedule" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="210" y="1250" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-61" value="Taint" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="135" y="1250" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-62" value="namespace:dmp-test:NoSchedule" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="210" y="1250" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-63" value="namespace:dmp-test" style="text;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="210" y="1290" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-64" value="Label" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="135" y="1290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-67" value="minion 2" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="462" y="990" width="200" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-75" value="snf pod 1&lt;br&gt;9 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#0000FF;strokeColor=#B09500;" vertex="1" parent="OvRHfM7m8GLuQbLyOeoD-67">
+          <mxGeometry x="38" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-76" value="snf pod 2&lt;br&gt;9 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#0000FF;strokeColor=#B09500;" vertex="1" parent="OvRHfM7m8GLuQbLyOeoD-67">
+          <mxGeometry x="38" y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-68" value="minion 3" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="692" y="990" width="200" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-77" value="web-ui pod 1&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" vertex="1" parent="OvRHfM7m8GLuQbLyOeoD-68">
+          <mxGeometry x="14" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-78" value="web-ui pod 2&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" vertex="1" parent="OvRHfM7m8GLuQbLyOeoD-68">
+          <mxGeometry x="14" y="95" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-79" value="oracle-db pod 1&lt;br&gt;14 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" vertex="1" parent="OvRHfM7m8GLuQbLyOeoD-68">
+          <mxGeometry x="14" y="179" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-69" value="namespace:tdc-test:NoSchedule" style="text;html=1;strokeColor=#B09500;fillColor=#e3c800;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="462" y="1250" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-70" value="namespace:gpi-test:NoSchedule" style="text;html=1;strokeColor=#2D7600;fillColor=#60a917;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="692" y="1250" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-71" value="namespace:gpi-test:NoSchedule" style="text;html=1;strokeColor=#2D7600;fillColor=#60a917;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="692" y="1250" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-72" value="namespace:tdc-test:NoSchedule" style="text;html=1;strokeColor=#B09500;fillColor=#e3c800;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="462" y="1250" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-73" value="namespace:gpi-test" style="text;html=1;strokeColor=#2D7600;fillColor=#60a917;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#ffffff;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="692" y="1290" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OvRHfM7m8GLuQbLyOeoD-74" value="namespace:tdc-test" style="text;html=1;strokeColor=#B09500;fillColor=#e3c800;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#000000;" vertex="1" parent="YmpykI_a9cAOImod66VC-1">
+          <mxGeometry x="462" y="1290" width="210" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -227,7 +290,7 @@
         <mxCell id="Xo1ADalxKKwnbj4WrBWZ-24" value="&lt;h1&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Initial Scheduling&lt;/span&gt;&lt;/h1&gt;&lt;h1&gt;&lt;br&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="Xo1ADalxKKwnbj4WrBWZ-1" vertex="1">
           <mxGeometry x="67.5" y="310" width="630" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Xo1ADalxKKwnbj4WrBWZ-25" value="web-ui pod 1&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="Xo1ADalxKKwnbj4WrBWZ-1" vertex="1">
+        <mxCell id="Xo1ADalxKKwnbj4WrBWZ-25" value="web-ui pod 2&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="Xo1ADalxKKwnbj4WrBWZ-1" vertex="1">
           <mxGeometry x="851" y="600" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Xo1ADalxKKwnbj4WrBWZ-26" value="Remaining resources for dmp-dev: 6gb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="Xo1ADalxKKwnbj4WrBWZ-1" vertex="1">
@@ -266,7 +329,7 @@
         <mxCell id="I9qRb9ve18TCpbmSmMh5-5" value="zookeeper pod 1&lt;br&gt;6 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" parent="I9qRb9ve18TCpbmSmMh5-4" vertex="1">
           <mxGeometry x="30" y="40" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="I9qRb9ve18TCpbmSmMh5-6" value="web-ui pod 1&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="I9qRb9ve18TCpbmSmMh5-4" vertex="1">
+        <mxCell id="I9qRb9ve18TCpbmSmMh5-6" value="web-ui pod 2&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="I9qRb9ve18TCpbmSmMh5-4" vertex="1">
           <mxGeometry x="30" y="110" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="I9qRb9ve18TCpbmSmMh5-7" value="snf pod 1&lt;br&gt;9 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#0000FF;strokeColor=#B09500;" parent="I9qRb9ve18TCpbmSmMh5-4" vertex="1">
@@ -322,7 +385,7 @@
         <mxCell id="MuWz_lc6We9hwkcbsWsm-12" value="&lt;h1&gt;Second schedule&lt;/h1&gt;&lt;div&gt;&lt;p&gt;After the initial scheduling we saw that the namespace dmp-dev resources quota&#39;s showed that 6 gb were still available. In parallel, the total resources still available on the 3 worker nodes was also equl to 6 gb&lt;/p&gt;&lt;p&gt;Total resources available on the cluster&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;= 6 gb&lt;/p&gt;&lt;p&gt;Resources yet to be consumed (according to dmp-dev ns quota)&amp;nbsp;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;= 6 gb&lt;/p&gt;&lt;p&gt;Now imagine we want to deploy a statefulset of 2 kafka brokers, each pod requesting 3 gb memory.&lt;/p&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="MuWz_lc6We9hwkcbsWsm-1" vertex="1">
           <mxGeometry x="77.5" y="160" width="632.5" height="169" as="geometry" />
         </mxCell>
-        <mxCell id="MuWz_lc6We9hwkcbsWsm-13" value="web-ui pod 1&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="MuWz_lc6We9hwkcbsWsm-1" vertex="1">
+        <mxCell id="MuWz_lc6We9hwkcbsWsm-13" value="web-ui pod 2&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="MuWz_lc6We9hwkcbsWsm-1" vertex="1">
           <mxGeometry x="851" y="600" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="MuWz_lc6We9hwkcbsWsm-14" value="Remaining resources for dmp-dev: ?gb" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="MuWz_lc6We9hwkcbsWsm-1" vertex="1">
@@ -367,7 +430,7 @@
         <mxCell id="MuWz_lc6We9hwkcbsWsm-25" value="zookeeper pod 1&lt;br&gt;6 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" parent="MuWz_lc6We9hwkcbsWsm-24" vertex="1">
           <mxGeometry x="30" y="40" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="MuWz_lc6We9hwkcbsWsm-26" value="web-ui pod 1&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="MuWz_lc6We9hwkcbsWsm-24" vertex="1">
+        <mxCell id="MuWz_lc6We9hwkcbsWsm-26" value="web-ui pod 2&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="MuWz_lc6We9hwkcbsWsm-24" vertex="1">
           <mxGeometry x="30" y="110" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="MuWz_lc6We9hwkcbsWsm-27" value="snf pod 1&lt;br&gt;9 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#0000FF;strokeColor=#B09500;" parent="MuWz_lc6We9hwkcbsWsm-24" vertex="1">
