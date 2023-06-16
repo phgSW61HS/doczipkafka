@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-06-16T01:21:55.069Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="TzXVd5zm5YkxR7TCZfqd" version="21.4.0" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2023-06-16T09:24:58.396Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="q8WO0fURHHn-Qb6njHqp" version="21.4.0" type="github" pages="5">
   <diagram name="Page-1" id="UMGvQnXuwSlmLZYAjQJy">
     <mxGraphModel dx="739" dy="470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -162,7 +162,7 @@
         <mxCell id="I9qRb9ve18TCpbmSmMh5-4" value="minion 3" style="swimlane;whiteSpace=wrap;html=1;" parent="Xo1ADalxKKwnbj4WrBWZ-1" vertex="1">
           <mxGeometry x="710" y="750" width="200" height="260" as="geometry" />
         </mxCell>
-        <mxCell id="I9qRb9ve18TCpbmSmMh5-5" value="zookeeper pod 1&lt;br&gt;6 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" parent="I9qRb9ve18TCpbmSmMh5-4" vertex="1">
+        <mxCell id="I9qRb9ve18TCpbmSmMh5-5" value="zookeeper pod 2&lt;br&gt;6 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" parent="I9qRb9ve18TCpbmSmMh5-4" vertex="1">
           <mxGeometry x="30" y="40" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="I9qRb9ve18TCpbmSmMh5-6" value="web-ui pod 2&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="I9qRb9ve18TCpbmSmMh5-4" vertex="1">
@@ -263,7 +263,7 @@
         <mxCell id="MuWz_lc6We9hwkcbsWsm-24" value="minion 3" style="swimlane;whiteSpace=wrap;html=1;" parent="MuWz_lc6We9hwkcbsWsm-1" vertex="1">
           <mxGeometry x="710" y="750" width="200" height="260" as="geometry" />
         </mxCell>
-        <mxCell id="MuWz_lc6We9hwkcbsWsm-25" value="zookeeper pod 1&lt;br&gt;6 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" parent="MuWz_lc6We9hwkcbsWsm-24" vertex="1">
+        <mxCell id="MuWz_lc6We9hwkcbsWsm-25" value="zookeeper pod 2&lt;br&gt;6 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#FFFFFF;strokeColor=#006EAF;" parent="MuWz_lc6We9hwkcbsWsm-24" vertex="1">
           <mxGeometry x="30" y="40" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="MuWz_lc6We9hwkcbsWsm-26" value="web-ui pod 2&lt;br&gt;2 gb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#FFFFFF;strokeColor=#2D7600;" parent="MuWz_lc6We9hwkcbsWsm-24" vertex="1">
