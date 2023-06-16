@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-06-16T00:33:47.235Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="0l2lhLXmuADQqD1MTPqg" version="21.4.0" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2023-06-16T01:01:00.691Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="zTLLS7vB3N6LlaOXI6LE" version="21.4.0" type="github" pages="5">
   <diagram name="Page-1" id="UMGvQnXuwSlmLZYAjQJy">
     <mxGraphModel dx="739" dy="470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -542,10 +542,13 @@
           <mxGeometry x="606" y="1050" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="7z16JHJX92VVNgglRkpK-50" value="When defining quotas, you can assign an amount of resources&amp;nbsp; that actually exceeds the actual capacities of the cluster.&lt;br&gt;If this is what happened in c01 cluster, this situation can create a &quot;first come first served&quot; effect&amp;nbsp; accross the different namespaces" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=0" vertex="1" parent="1">
-          <mxGeometry x="110" y="920" width="260" height="160" as="geometry" />
+          <mxGeometry x="44" y="860" width="370" height="110" as="geometry" />
         </mxCell>
         <mxCell id="7z16JHJX92VVNgglRkpK-51" value="&quot;first come first served&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="340" y="1080" width="86" height="30" as="geometry" />
+          <mxGeometry x="352" y="1020" width="86" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1eeabQC-8hNdD5dOrFno-1" value="Previous example (second schedule slide) where total resources available in the cluster was equal to the total resources allocated through the resource quotas for each namespace, already showed some problems that this resource allocation strategy could generate. In the situation descirbed in this slide, we realize to which extend this can problematic, especially when you don&#39;t have cluster wide access rights and cannot have a look at the pieces of information outside your own ns" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="1260" width="590" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
